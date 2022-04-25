@@ -89,7 +89,6 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 }
 console.log(yearsUntilRetirement(1991, 'Jonas'));
 console.log(yearsUntilRetirement(1950, 'Mike'));
-*/
 
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3.0;
 const avgDolphins = calcAverage(44, 23, 71);
@@ -108,3 +107,32 @@ function checkWinner(avgDolphins, avgKoalas) {
 }
 
 checkWinner(avgDolphins, avgKoalas)
+
+const friends = ['Michael', 'Steven', 'Peter'];
+console.log(friends);
+console.log(friends[0]);
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+
+const years = new Array(1991, 1984, 2008, 2020);
+
+friends[2] = 'Jay';
+console.log(friends);
+const jonas = ['Jonas', 'Davis', 2037 - 1991, 'teacher', friends];
+console.log(jonas);
+
+function calcAge1(birthYear) {
+    return 2037 - birthYear;
+}
+
+
+const friends = ['Michael', 'Steven', 'Peter'];
+console.log(friends);
+friends.push('Bob');
+console.log(friends);
+friends.unshift('John');
+console.log(friends);
+friends.pop();
+console.log(friends);
+*/
