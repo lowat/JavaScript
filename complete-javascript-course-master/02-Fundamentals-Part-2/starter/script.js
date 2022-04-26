@@ -135,4 +135,114 @@ friends.unshift('John');
 console.log(friends);
 friends.pop();
 console.log(friends);
+
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Smith',
+    age: 2099 - 2020,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+
+//console.log(jonas);
+//console.log(jonas.age);
+//console.log(jonas['age']);
+const interestedIn = prompt('What do you want to know? Choose firstName, lastName, age, job, or friends?');
+
+if (jonas[interestedIn]) {
+    console.log(jonas[interestedIn]);
+} else {
+    console.log('Wrong request!');
+}
+
+jonas.location = 'Earth';
+jonas['favColor'] = 'green';
+console.log(jonas);
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Smith',
+    birthYear: 1900,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLiscence: true,
+    calcAge: function () {
+        //console.log(this);
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+    getSummary: function () {
+        return `${this.firstName} is a ${this.age} year old ${this.job} and can ${this.hasDriversLiscence ? "" : "not "}drive`
+    }
+};
+console.log(jonas.calcAge());
+
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+console.log(jonas.getSummary())
+
+const mark = {
+    name: 'Mark',
+    mass: 78,
+    height: 1.69,
+
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi;
+    }
+};
+
+const john = {
+    name: 'John',
+    mass: 92,
+    height: 1.95,
+
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi;
+    }
+};
+
+const people = new Array(mark, john);
+const indexOfLargerBMI = mark.calcBMI() > john.calcBMI() ? 0 : 1;
+const otherIndex = indexOfLargerBMI ^ 1;
+console.log(`${people[indexOfLargerBMI].name}'s BMI (${people[indexOfLargerBMI].bmi}) is higher than ${people[otherIndex].name}'s BMI (${people[otherIndex].bmi}) `)
+
+const arr = [100, 999, 2, 0, 100, 79, 6, 9, 5, 3, 2];
+const arr2 = ["dog", "cat", "fish", "bird"];
+const arrOfArrs = [arr, arr2];
+for (let x = 0; x < arrOfArrs.length; x++) {
+    for (let y = 0; y < arrOfArrs[x].length; y++) {
+        console.log(arrOfArrs[x][y]);
+    }
+
+}
+
+
+let x = 0;
+while (x < 10) {
+    x++;
+    console.log(x);
+}
+
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+    console.log(`Sorry you rolled a ${dice}! LOOKING FOR 6!!!!!!!!!!`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+}
+console.log(`YOU WIN by rolling a ${dice}! `);
 */
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+const tipPercent = prompt('How Much Do you want to tip');
+for (let x = 0; x < bills.length; x++) {
+    tips[x] = bills[x] * (1.0 / tipPercent);
+    totals[x] = tips[x] + bills[x];
+}
+console.log(totals);
